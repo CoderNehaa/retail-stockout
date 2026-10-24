@@ -1,0 +1,8 @@
+# Section 2 simulator (Python 3.11)
+pandas>=2.1
+pyodbc>=5.0
+azure-identity>=1.15
+azure-keyvault-secrets>=4.7
+azure-eventhub>=5.11
+azure-storage-file-datalake>=12.14
+requests>=2.31
