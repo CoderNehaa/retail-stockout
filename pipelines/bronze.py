@@ -4,7 +4,7 @@ from pyspark.sql import functions as F
 # ---- Settings: pipeline ki Configuration (Step 6) se aate hain, code mein koi secret nahi ----
 EH_NAMESPACE = spark.conf.get("eh.namespace")   # ehn-retail-nde
 EH_HUB       = spark.conf.get("eh.hub")         # pos-sales
-EH_CONN      = spark.conf.get("eh.conn")        # Key Vault se (eh-pos-listen)
+EH_CONN      = dbutils.secrets.get("kv", "eh-pos-listen").strip()
 LANDING      = spark.conf.get("landing.path")   # abfss://landing@retailstoragelakende.dfs.core.windows.net
 
 JAAS = ('kafkashaded.org.apache.kafka.common.security.plain.PlainLoginModule required '
